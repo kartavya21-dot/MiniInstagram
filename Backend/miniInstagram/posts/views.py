@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from rest_framework import viewsets, generics, permissions, filters
 from rest_framework.permissions import AllowAny
 from django.contrib.auth import get_user_model
@@ -37,9 +39,23 @@ class PostView(viewsets.ModelViewSet):
 
 
 
-class PostLikeView(viewsets.ModelViewSet):
-    serializer_class = PostLikeSerializer
+class PostLikeToggle(APIView):
+    """
+    POST /posts/<post_id>/like/
+    Toggles like: if already liked, unlike; else, like.
+    Returns current like status and likes_count
+    """
     permission_classes = [permissions.IsAuthenticated]
-    
-    def get_queryset(self):
-        return PostLike.objects.filter(post=self.request.post)
+
+    def post(self, request, post_id):
+        try:
+            post = Post.objects.get(id=post_id)
+        except Post.DoesNotExist:
+            return Response({"error": "Post not found"}, status=404)
+
+        like, created = PostLike.objects.get_or_create(user=request.user, post=post)
+
+        if not created:
+            # Already liked, so unlike
+            like.delete()
+            return Response({"liked": False, "likes_count": post.likes.count()})
