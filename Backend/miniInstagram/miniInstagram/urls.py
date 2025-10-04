@@ -9,5 +9,5 @@ urlpatterns = [
     # Apps
     path("users/", include("users.urls")),
     path("posts/", include("posts.urls")),
-    # path("comments/", include("comments.urls")),
+    path("comments/", include("comments.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

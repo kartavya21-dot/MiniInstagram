@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework import viewsets, generics, permissions, filters
+from rest_framework import viewsets, generics, permissions, filters, status
 from rest_framework.permissions import AllowAny
 from django.contrib.auth import get_user_model
 from .serializers import PostSerializer, PostLikeSerializer
@@ -51,7 +51,7 @@ class PostLikeToggle(APIView):
         try:
             post = Post.objects.get(id=post_id)
         except Post.DoesNotExist:
-            return Response({"error": "Post not found"}, status=404)
+            return Response({"error": "Post not found"}, status=status.HTTP_404_NOT_FOUND)
 
         like, created = PostLike.objects.get_or_create(user=request.user, post=post)
 
@@ -59,3 +59,5 @@ class PostLikeToggle(APIView):
             # Already liked, so unlike
             like.delete()
             return Response({"liked": False, "likes_count": post.likes.count()})
+        
+        return Response({"liked": True, "likes_count": post.like.count()})

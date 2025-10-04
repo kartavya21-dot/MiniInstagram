@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import Post, PostLike
 
 class PostSerializer(serializers.ModelSerializer):
-    likes_count = serializers.IntegerField(source='like.count', read_only=True)
+    likes_count = serializers.IntegerField(source='likes.count', read_only=True)
     class Meta:
         model = Post
         fields = '__all__'
@@ -13,4 +13,3 @@ class PostLikeSerializer(serializers.ModelSerializer):
         model = PostLike
         fields = ['id', 'user', 'post', 'created_at']
         read_only_fields = ['user', 'created_at']
-    
