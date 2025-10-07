@@ -25,9 +25,9 @@ const Post = ({ title, caption, image, user, created_at }) => {
       </div>
         <hr />
       <div className="post-option">
-        <AiOutlineLike size="1.3em"/>
-        <FaRegCommentDots size="1.3em"/>
-        <IoEllipsisHorizontalCircleOutline size="1.3em"/>
+        <AiOutlineLike size="1.2em"/>
+        <FaRegCommentDots size="1.2em"/>
+        <IoEllipsisHorizontalCircleOutline size="1.2em"/>
       </div>
     </div>
   );

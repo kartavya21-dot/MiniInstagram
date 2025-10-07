@@ -11,6 +11,7 @@
     width: 95dvw;
     margin: auto;
     z-index: 100;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 15px;
 }
 .logo{
     width: 35px;

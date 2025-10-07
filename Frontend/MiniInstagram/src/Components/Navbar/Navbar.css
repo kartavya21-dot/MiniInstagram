@@ -1,15 +1,16 @@
 .navbar{
     border: 1px solid black;
     position: fixed;
-    background: white;
-    bottom: 4dvh;
-    padding: 10px;
-    width: 60dvw;
+    background-color: snow;
+    bottom: 5dvh;
+    padding: 10px 30px;
+    width: 65dvw;
     margin: auto;
     display: flex;
     left: 50%;
     transform: translateX(-50%);
     justify-content: space-between;
-    border-radius: 10px;
+    border-radius: 30px;
     z-index: 100;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
