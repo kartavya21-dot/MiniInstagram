@@ -1,0 +1,17 @@
+/* Header */
+.header-section{
+    position: sticky;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: snow;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    padding: 7px;
+    width: 95dvw;
+    margin: auto;
+    margin-top: 10px;
+}
+.logo{
+    width: 35px;
+    margin-left: 50%;
+}
