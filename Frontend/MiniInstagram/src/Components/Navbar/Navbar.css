@@ -1,16 +1,58 @@
-.navbar{
-    border: 1px solid black;
-    position: fixed;
-    background-color: snow;
-    bottom: 5dvh;
-    padding: 10px 30px;
-    width: 65dvw;
-    margin: auto;
-    display: flex;
-    left: 50%;
-    transform: translateX(-50%);
-    justify-content: space-between;
-    border-radius: 30px;
-    z-index: 100;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+.navbar {
+  border: 1px solid black;
+  position: fixed;
+  background-color: rgba(255, 250, 250, 0.363);
+  bottom: 4dvh;
+  padding: 10px 30px;
+  width: 65dvw;
+  margin: auto;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: space-between;
+  border-radius: 30px;
+  z-index: 100;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: black;
+}
+
+/* Icon buttons */
+.navbar-button {
+  color: black; /* changed to black */
+  /* background: rgba(255, 255, 255, 0.4); */
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+/* Hover effect */
+.navbar-button:hover {
+  transform:  scale(1.05);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  /* color: rgb(0, 119, 255); subtle blue tint on hover */
+}
+
+/* Optional glow on click */
+@keyframes glow {
+  0% {   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+  50% {  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); }
+  100% { box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+}
+
+/* .navbar-button:active {
+  animation: glow 0.8s ease;
+} */
+.active{
+    /* animation: glow 0.8s ease-out; */
+    box-shadow: 0 0 10px rgb(0, 0, 0);
 }
