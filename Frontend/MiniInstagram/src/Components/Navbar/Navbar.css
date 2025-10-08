@@ -5,6 +5,7 @@
   bottom: 4dvh;
   padding: 10px 30px;
   width: 65dvw;
+  max-width: 342px;
   margin: auto;
   display: flex;
   left: 50%;

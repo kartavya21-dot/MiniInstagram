@@ -28,7 +28,7 @@
 .input-section input{
     /* background-color: snow; */
     width: 80%;
-    font-size: 20px;
+    font-size: 14px;
     padding: 10px;
     padding-left: 15px;
     border-radius: 10px;
@@ -42,7 +42,8 @@
 }
 .input-section button{
     width: 20%;
-    font-size: 15px;
+    border: none;
+    font-size: 14px;
     border-radius: 10px;
 }
 .input-section button:hover{
@@ -61,7 +62,24 @@
     border: 1px solid black;
     padding: 10px;
     display: flex;
+    flex-direction: column;
     gap: 10px;
     justify-content: center;
     border-radius: 10px;
+}
+
+/* User Set */
+.user-set{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-x: auto;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+.user-set::-webkit-scrollbar{
+  display: none;
+}
+.post-set{
+  border: 1px solid black;
 }
