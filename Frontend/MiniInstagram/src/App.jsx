@@ -2,6 +2,7 @@ import './App.css'
 import Header from './Components/Header/Header'
 import Navbar from './Components/Navbar/Navbar'
 import Home from './Pages/Home/Home'
+import Profile from './Pages/Profile/Profile'
 import Search from './Pages/Search/Search'
 
 function App() {
@@ -10,8 +11,8 @@ function App() {
     <div className='app'>
       <Header/>
       {/* <Home/> */}
-      <Search/>
-      
+      {/* <Search/> */}
+      <Profile/>
       <Navbar/>
     </div>
   )
