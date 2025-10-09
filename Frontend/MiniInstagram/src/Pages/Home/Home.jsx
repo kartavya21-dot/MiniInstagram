@@ -92,7 +92,7 @@ const Home = () => {
   console.log(socialMediaPosts);
 
   return (
-    <section className="home-page">
+    <section className="home-page page">
       {
         <PostList/>
       }

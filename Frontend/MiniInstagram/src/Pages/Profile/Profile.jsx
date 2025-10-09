@@ -7,7 +7,7 @@ const Profile = () => {
   const [selected, setSelected] = useState('post');
 
   return (
-    <div className="profile-page">
+    <div className="profile-page page">
       <div className="user-details">
 
         <div className="ccss">

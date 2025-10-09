@@ -17,7 +17,7 @@ const PostDetails = () => {
   };
 
   return (
-    <div className="post-details-page">
+    <div className="post-details-page page">
       <Post title={post.title} caption={post.caption} image={post.image} user={post.user} created_at={post.created_at}/>
       <CommentList />
     </div>

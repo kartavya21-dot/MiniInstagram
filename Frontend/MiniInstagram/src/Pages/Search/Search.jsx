@@ -93,7 +93,7 @@ const Search = () => {
   ];
 
   return (
-    <div className="search-page">
+    <div className="search-page page">
       <form className="input-section">
         <input type="text" placeholder="Search Person, Post..." />
         <button type="submit" onClick={(e) => e.preventDefault()}>
