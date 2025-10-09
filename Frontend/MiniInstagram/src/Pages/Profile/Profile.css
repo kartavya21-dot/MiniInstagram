@@ -16,6 +16,7 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+/* User Details */
 .user-details{
     display: flex;
     flex-direction: column;
@@ -24,6 +25,8 @@
     padding: 15px;
     gap: 10px;
 }
+
+/* For User Profile, User Name, Email */
 .ccss{
     display: flex;
     gap: 20px;
@@ -50,6 +53,7 @@
     margin-left: 10px;
 }
 
+/* UserBio */
 .sscc{
     display: flex;
     flex-direction: column;
@@ -58,7 +62,7 @@
 .sscc .bio{
     border: 1px solid black;
     padding: 10px;
-    height: 50px;
+    min-height: 50px;
     border-radius: 10px;
 }
 .sscc p{
@@ -97,7 +101,20 @@
     border: none;
     border-radius: 10px;
 }
+.selection-active-button{
+    animation: selectAnimation 0.1s ease-out;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
 
-.selection-result{
-    /* border: 1px solid black; */
+@keyframes selectAnimation {
+    0% {
+        /* border: 1px solid blue; */
+        box-shadow: 0 0 2px rgb(0, 0, 0);
+    }
+    50% {
+        box-shadow: 0 0 5px rgb(0, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 10px rgb(0, 0, 0);
+    }
 }

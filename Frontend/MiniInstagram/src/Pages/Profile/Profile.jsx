@@ -25,15 +25,15 @@ const Profile = () => {
 
         <div className="sscc">
             <p>Bio</p>
-          <div className="bio">My name is John Cena. apple banna</div>
+          <div className="bio">My name is John Cena. Apple, Banana, Cat, Dog, Ele, Fish</div>
           <button type="button" className="bio-edit-button">Edit</button>
         </div>
       </div>
       <div className="user-posting-list">
         <div className="button-selection">
-            <button onClick={()=>setSelected('post')}>Post</button>
-            <button onClick={()=>setSelected('comment')}>Comments</button>
-            <button onClick={()=>setSelected('likedPost')}>LikedPost</button>
+            <button className={selected==='post' ? 'selection-active-button' : 'button'} onClick={()=>setSelected('post')}>Post</button>
+            <button className={selected==='comment' ? 'selection-active-button' : 'button'} onClick={()=>setSelected('comment')}>Comments</button>
+            <button className={selected==='likedPost' ? 'selection-active-button' : 'button'} onClick={()=>setSelected('likedPost')}>LikedPost</button>
         </div>
         <div className="selection-result">
             {(selected==='post') && <PostList/>}
