@@ -1,7 +1,11 @@
-import React from "react";
+import React, { use, useState } from "react";
 import "./Profile.css";
+import PostList from "../../Components/PostList/PostList";
+import CommentList from "../../Components/CommentList/CommentList";
 
 const Profile = () => {
+  const [selected, setSelected] = useState('post');
+
   return (
     <div className="profile-page">
       <div className="user-details">
@@ -27,12 +31,14 @@ const Profile = () => {
       </div>
       <div className="user-posting-list">
         <div className="button-selection">
-            <button>Post</button>
-            <button>Comments</button>
-            <button>LikedPost</button>
+            <button onClick={()=>setSelected('post')}>Post</button>
+            <button onClick={()=>setSelected('comment')}>Comments</button>
+            <button onClick={()=>setSelected('likedPost')}>LikedPost</button>
         </div>
         <div className="selection-result">
-            
+            {(selected==='post') && <PostList/>}
+            {(selected==='comment') && <CommentList/>}
+            {(selected==='likedPost') && <PostList/>}
         </div>
       </div>
     </div>

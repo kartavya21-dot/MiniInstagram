@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import Post from "../../Components/Post/Post";
+import PostList from "../../Components/PostList/PostList";
 
 const Home = () => {
   const socialMediaPosts = [
@@ -93,11 +94,7 @@ const Home = () => {
   return (
     <section className="home-page">
       {
-        socialMediaPosts.map((item, index)=> {
-            return (
-                <Post title={item.title} caption={item.caption} image={item.image} user={item.user} created_at={item.created_at} />
-            )
-        })
+        <PostList/>
       }
     </section>
   );
