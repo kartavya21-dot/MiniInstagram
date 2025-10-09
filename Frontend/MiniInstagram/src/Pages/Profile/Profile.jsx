@@ -26,7 +26,14 @@ const Profile = () => {
         </div>
       </div>
       <div className="user-posting-list">
-        
+        <div className="button-selection">
+            <button>Post</button>
+            <button>Comments</button>
+            <button>LikedPost</button>
+        </div>
+        <div className="selection-result">
+            
+        </div>
       </div>
     </div>
   );

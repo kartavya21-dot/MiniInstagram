@@ -1,0 +1,21 @@
+.post-details-page {
+    flex: 1;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  background-color: snow;
+  width: 95dvw;
+  /* Note to self change this value late */
+    max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  overflow-y: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.post-details-page::-webkit-scrollbar {
+  display: none;
+}

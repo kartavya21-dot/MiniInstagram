@@ -1,6 +1,6 @@
 import React from "react";
 import "./Search.css";
-import UserSearchCard from "../../Components/UserSearchCard";
+import UserSearchCard from "../../Components/UserSearchCard/UserSearchCard";
 import Post from "../../Components/Post/Post";
 
 const Search = () => {
