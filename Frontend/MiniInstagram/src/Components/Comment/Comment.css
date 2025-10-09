@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    animation: pagePop 0.2s ease-in;
 }
 
 .comment-user-image-container{
@@ -62,4 +63,28 @@
 .user-comment-text button{
     border: none;
     margin-left: 10px;   
+}
+
+/* Animation */
+@keyframes pagePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.68);
+  }
+  25% {
+    opacity: 0.25;
+    transform: scale(0.76);
+  }
+  50% {
+    opacity: 0.50;
+    transform: scale(0.84);
+  }
+  75% {
+    opacity: 0.75;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
