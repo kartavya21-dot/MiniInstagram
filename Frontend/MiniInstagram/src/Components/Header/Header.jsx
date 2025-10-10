@@ -1,13 +1,16 @@
 import React from "react";
-import logo from '../../assets/logo3.png'
+import logo from "../../assets/logo3.png";
 import { CiCirclePlus } from "react-icons/ci";
-import './Header.css'
+import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className="header-section">
       <img className="logo" src={logo} alt="logo" />
-      <CiCirclePlus size="2em" className="new-post" />
+      <Link to="/newPost">
+        <CiCirclePlus size="2em" className="new-post" />
+      </Link>
     </div>
   );
 };

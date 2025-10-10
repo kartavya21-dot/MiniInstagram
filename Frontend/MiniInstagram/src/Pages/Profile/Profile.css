@@ -30,6 +30,7 @@
 .ccss{
     display: flex;
     gap: 20px;
+    animation: pagePop 0.4s ease-in;
 }
 .user-profile-pic-container{
     border: 1px solid grey;
@@ -57,6 +58,7 @@
 .sscc{
     display: flex;
     flex-direction: column;
+    animation: pagePop 0.4s ease-in;
     /* gap: 10px; */
 }
 .sscc .bio{
@@ -106,6 +108,7 @@
     box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
+/* Animation */
 @keyframes selectAnimation {
     0% {
         /* border: 1px solid blue; */
@@ -117,4 +120,27 @@
     100% {
         box-shadow: 0 0 10px rgb(0, 0, 0);
     }
+}
+
+@keyframes pagePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.68);
+  }
+  25% {
+    opacity: 0.25;
+    transform: scale(0.76);
+  }
+  50% {
+    opacity: 0.50;
+    transform: scale(0.84);
+  }
+  75% {
+    opacity: 0.75;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

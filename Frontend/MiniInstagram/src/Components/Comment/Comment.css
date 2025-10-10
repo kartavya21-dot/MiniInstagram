@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    animation: pagePop 0.2s ease-in;
+    animation: pagePop 0.4s ease-in;
 }
 
 .comment-user-image-container{

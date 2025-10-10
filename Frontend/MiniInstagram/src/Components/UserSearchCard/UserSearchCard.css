@@ -7,9 +7,14 @@
   padding: 10px;
   align-items: center;
   gap: 10px;
-  animation: pagePop 0.2s ease-in;
+  animation: pagePop 0.4s ease-in;
 }
-
+.user-search-card:hover{
+    transition: ease-in-out;
+    transition-duration: 0.2s;
+    scale: 1.002;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
 .user-profile-image {
   border: 1px solid grey;
   width:  4em;

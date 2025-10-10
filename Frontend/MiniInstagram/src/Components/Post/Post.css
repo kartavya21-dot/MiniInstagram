@@ -5,10 +5,11 @@
     padding: 10px;
     border-radius: 10px;
    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-   animation: pagePop 0.2s ease-in;
+   animation: pagePop 0.4s ease-in;
 }
 .post-card:hover{
     transition: ease-in-out;
+    transition-duration: 0.2s;
     scale: 1.002;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
