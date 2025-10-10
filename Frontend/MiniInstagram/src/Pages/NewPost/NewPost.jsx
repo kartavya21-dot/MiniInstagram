@@ -19,7 +19,7 @@ const NewPost = () => {
     setFile(null);
 
   }
-
+  
   return (
     <div className="new-post-page">
       <form>

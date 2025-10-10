@@ -63,8 +63,9 @@ REST_FRAMEWORK = {
     )
 }
 
+# Need to change access token lifetime
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),   # short-lived
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=99999999),   # short-lived
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),      # refresh token lasts longer
     "ROTATE_REFRESH_TOKENS": True,                    # get new refresh token on refresh
     "BLACKLIST_AFTER_ROTATION": True,                 # old refresh becomes invalid

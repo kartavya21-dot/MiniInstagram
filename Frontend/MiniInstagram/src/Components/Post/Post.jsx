@@ -5,6 +5,7 @@ import { IoEllipsisHorizontalCircleOutline } from "react-icons/io5";
 import "./Post.css";
 
 const Post = ({ title, caption, image, user, created_at }) => {
+  
   return (
     <div className="post-card">
       <div className="user-detail">
