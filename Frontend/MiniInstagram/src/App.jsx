@@ -10,18 +10,25 @@ import NewPost from "./Pages/NewPost/NewPost";
 import Auth from "./Pages/Auth/Auth";
 
 function App() {
+  const isAuthenticated = !!localStorage.getItem("accessToken");
+
   return (
     <div className="app">
       <Header />
-      <Auth />
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/newPost" element={<NewPost/>}/>
-        <Route path="/postdetails" element={<PostDetails />}/>
-        <Route path="/profile" element={<Profile/>}/>
-        <Route path="/search" element={<Search/>}/>
-      </Routes>
-      <Navbar />
+      {isAuthenticated ? (
+        <>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/newPost" element={<NewPost />} />
+            <Route path="/postdetails" element={<PostDetails />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/search" element={<Search />} />
+          </Routes>
+          <Navbar />
+        </>
+      ) : (
+        <Auth />
+      )}
     </div>
   );
 }

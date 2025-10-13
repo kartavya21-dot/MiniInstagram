@@ -2,7 +2,7 @@ import React from "react";
 import Post from "../Post/Post";
 import './PostList.css'
 
-const PostList = () => {
+const PostList = ({posts}) => {
   const socialMediaPosts = [
     {
       // Post 1: Contains an image
@@ -93,10 +93,9 @@ const PostList = () => {
 
   return (
     <div className="post-list">
-      {socialMediaPosts.map((item, index) => {
+      {posts.map((item, index) => {
         return (
           <Post
-            title={item.title}
             caption={item.caption}
             image={item.image}
             user={item.user}

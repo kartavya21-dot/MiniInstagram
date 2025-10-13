@@ -23,9 +23,9 @@ const Auth = () => {
     try {
       const response = await signup(userData);
       console.log(response);
-
-      const tokenResponse = await login({username, password});
-      console.log(tokenResponse);
+      toggleLogin(!isLogin);
+      // const tokenResponse = await handleLogin();
+      // console.log(tokenResponse);
 
     } catch (error) {
       console.log(error);
@@ -34,8 +34,12 @@ const Auth = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    const userData = {
+      username,
+      password,
+    };
     try {
-      const tokenResponse = await login({username, password});
+      const tokenResponse = await login(userData);
       console.log(tokenResponse);
     } catch (error) {
       console.log(error);

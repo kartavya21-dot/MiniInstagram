@@ -27,7 +27,13 @@ SECRET_KEY = 'django-insecure-dbr_yvyjrs)!8gb9qu_4)0ogdu^d4$*gsw2f@bdm^ga3!^segh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
 
 
 # Application definition
@@ -39,23 +45,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'users',
     'posts',
     'comments',
     'rest_framework',
     'rest_framework.authtoken',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # must be above CommonMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -65,15 +73,15 @@ REST_FRAMEWORK = {
 
 # Need to change access token lifetime
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=99999999),   # short-lived
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=7),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),      # refresh token lasts longer
     "ROTATE_REFRESH_TOKENS": True,                    # get new refresh token on refresh
     "BLACKLIST_AFTER_ROTATION": True,                 # old refresh becomes invalid
 }
 
-CORS_ALLOW_ALL_ORIGINS = True
-
 ROOT_URLCONF = 'miniInstagram.urls'
+CORS_ALLOW_CREDENTIALS = True
+
 
 TEMPLATES = [
     {

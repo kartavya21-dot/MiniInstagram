@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./NewPost.css";
+import { newPosts } from "../../services/postServices";
 
 const NewPost = () => {
   const [file, setFile] = useState(null);
@@ -17,7 +18,21 @@ const NewPost = () => {
   };
   const removeMedia = () => {
     setFile(null);
+  }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("image", file);
+    formData.append("caption", caption);
+    formData.append("user", 3);
+    try{
+      const response = await newPosts(formData);
+      console.log(response);
+    } catch(e){
+      console.log(e);
+    }
   }
   
   return (
@@ -48,7 +63,7 @@ const NewPost = () => {
             <button type="button" onClick={removeMedia} className="remove-media">Remove Media</button>
           </div>
         )}
-        <button type="submit" className="new-post-submit">
+        <button type="submit" onClick={handleSubmit} className="new-post-submit">
           Post
         </button>
       </form>
