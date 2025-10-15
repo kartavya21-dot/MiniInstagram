@@ -5,6 +5,9 @@ import { newPosts } from "../../services/postServices";
 const NewPost = () => {
   const [file, setFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
+  const [banner, setBanner] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const [caption, setCaption] = useState("");
 
@@ -18,7 +21,7 @@ const NewPost = () => {
   };
   const removeMedia = () => {
     setFile(null);
-  }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,16 +30,39 @@ const NewPost = () => {
     formData.append("image", file);
     formData.append("caption", caption);
     formData.append("user", 3);
-    try{
+    try {
       const response = await newPosts(formData);
-      console.log(response);
-    } catch(e){
+      // console.log(response);
+      if (response.status === 201) {
+        console.log("reached", response.status);
+        setSuccess(true);
+        setFile(null);
+        setCaption("");
+        setPreviewUrl(null);
+        setBanner(!banner);
+        setSuccessMessage("Post submitted successfully");
+        setTimeout(() => {
+          setBanner(false);
+        }, 3000);
+      }
+    } catch (e) {
+      setSuccess(false);
+      setBanner(!banner);
+      setSuccessMessage("Something went wrong");
+        setTimeout(() => {
+          setBanner(false);
+        }, 3000);
       console.log(e);
     }
-  }
-  
+  };
+
   return (
     <div className="new-post-page">
+      {banner && (
+        <div className={`submit-banner ${success ? "success" : "error"} `}>
+          {successMessage}
+        </div>
+      )}
       <form>
         <textarea
           type="text"
@@ -60,10 +86,20 @@ const NewPost = () => {
             <div className="media-preview">
               <img src={previewUrl} alt="" />
             </div>
-            <button type="button" onClick={removeMedia} className="remove-media">Remove Media</button>
+            <button
+              type="button"
+              onClick={removeMedia}
+              className="remove-media"
+            >
+              Remove Media
+            </button>
           </div>
         )}
-        <button type="submit" onClick={handleSubmit} className="new-post-submit">
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className="new-post-submit"
+        >
           Post
         </button>
       </form>

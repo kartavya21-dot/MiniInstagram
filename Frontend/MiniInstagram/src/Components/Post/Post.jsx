@@ -4,7 +4,7 @@ import { FaRegCommentDots } from "react-icons/fa";
 import { IoEllipsisHorizontalCircleOutline } from "react-icons/io5";
 import "./Post.css";
 
-const Post = ({ caption, image, user, created_at }) => {
+const Post = ({ caption, image, user, username, created_at }) => {
   
   return (
     <div className="post-card">
@@ -15,7 +15,7 @@ const Post = ({ caption, image, user, created_at }) => {
             alt=""
           />
         </div>
-        <h1 className="user-name">{user.username}</h1>
+        <h1 className="user-name">{username}</h1>
       </div>
         <hr />
       <div className="post-detail">

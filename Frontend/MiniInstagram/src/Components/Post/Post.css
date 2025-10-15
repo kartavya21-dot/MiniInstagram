@@ -58,6 +58,11 @@ hr{
     align-items: center;
     gap: 10px;
 }
+.post-caption{
+  align-self: flex-start;
+  margin: 0 3px;
+  border: 1px solid rgba(128, 128, 128, 0.342);
+}
 .post-image-container{
     /* border: 1px solid red; */
     width: 100%;

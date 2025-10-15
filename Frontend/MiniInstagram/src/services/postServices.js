@@ -9,5 +9,5 @@ export const fetchPosts = async () => {
 
 export const newPosts = async (post) => {
     const response = await api.post('posts/posts/', post);
-    return response.data;
+    return response;
 }

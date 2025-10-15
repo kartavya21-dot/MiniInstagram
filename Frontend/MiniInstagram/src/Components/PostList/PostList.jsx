@@ -99,6 +99,7 @@ const PostList = ({posts}) => {
             caption={item.caption}
             image={item.image}
             user={item.user}
+            username={item.username}
             created_at={item.created_at}
           />
         );

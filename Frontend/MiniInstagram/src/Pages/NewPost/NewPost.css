@@ -172,3 +172,41 @@
     background-color: #3d8b41;
     transform: scale(1.05);
 }
+
+.submit-banner{
+  padding: 10px;
+  width: 20em;
+  align-self: center;
+  z-index: 10;
+  position: absolute;
+  opacity: 0.8;
+  border-radius: 10px;
+  /* color: green; */
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  animation: slideInDown 0.5s ease-out;
+}
+
+.success{
+  border: 1px solid green;
+  color: green;
+  background-color: lightgreen;
+}
+
+.error{
+  border: 1px solid red;
+  color: red;
+  background-color: rgba(255, 99, 71, 0.67);
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

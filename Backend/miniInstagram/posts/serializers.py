@@ -3,10 +3,12 @@ from .models import Post, PostLike
 
 class PostSerializer(serializers.ModelSerializer):
     likes_count = serializers.IntegerField(source='likes.count', read_only=True)
+    username = serializers.CharField(source='user.username', read_only=True)
+
     class Meta:
         model = Post
-        fields = '__all__'
-        read_only_fields = ['created_at', 'updated_at'] #id is implicitely read only: django magic
+        fields = ['id', 'user', 'username', 'caption', 'image', 'created_at', 'updated_at', 'likes_count']
+        read_only_fields = ['created_at', 'updated_at', 'username'] #id is implicitely read only: django magic
     
 class PostLikeSerializer(serializers.ModelSerializer):
     class Meta:
