@@ -1,10 +1,26 @@
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import "./Profile.css";
 import PostList from "../../Components/PostList/PostList";
 import CommentList from "../../Components/CommentList/CommentList";
+import { getMyPost } from "../../services/postServices";
 
 const Profile = () => {
   const [selected, setSelected] = useState('post');
+  const [myPost, setMyPost] = useState([]);
+
+  
+  const fetchMyPost = async () => {
+    try{
+      setMyPost(await getMyPost());
+    }catch(err){
+      setMyPost([]);
+      console.log(err);
+    }
+  }
+
+  useEffect(()=>{
+    fetchMyPost()
+  }, [])
 
   return (
     <div className="profile-page page">
@@ -36,7 +52,7 @@ const Profile = () => {
             <button className={selected==='likedPost' ? 'selection-active-button' : 'button'} onClick={()=>setSelected('likedPost')}>LikedPost</button>
         </div>
         <div className="selection-result">
-            {(selected==='post') && <PostList/>}
+            {(selected==='post') && <PostList posts={myPost}/>}
             {(selected==='comment') && <CommentList/>}
             {(selected==='likedPost') && <PostList/>}
         </div>

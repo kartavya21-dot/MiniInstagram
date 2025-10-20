@@ -10,10 +10,11 @@ import NewPost from "./Pages/NewPost/NewPost";
 import Auth from "./Pages/Auth/Auth";
 
 function App() {
-  const isAuthenticated = !!localStorage.getItem("accessToken");
+  const isAuthenticated = localStorage.getItem("accessToken");
 
   return (
     <div className="app">
+      {/* <div>app</div> */}
       <Header />
       {isAuthenticated ? (
         <>
